@@ -10,6 +10,13 @@ terraform {
     }
   }
   required_version = ">= 1.1.0"
+  backend "remote" {
+    organization = "ballfindr"
+    hostname = "app.terraform.io"
+    workspaces {
+      prefix ="ballfindr-"
+    }
+     token = "4BqY7FnjQQ9Ebg.atlasv1.NRUEZtHsmzpFFGvbooGrFKJ0MhNQA2vaHZ0VmrEzZ0q0Sp5VbcITWphi3OyZKYMn3UA"
 
   cloud {
     organization = "ballfindr"
@@ -17,7 +24,6 @@ terraform {
     workspaces {
       name = "learn-terraform-cloud"
     }
-    token = "4BqY7FnjQQ9Ebg.atlasv1.NRUEZtHsmzpFFGvbooGrFKJ0MhNQA2vaHZ0VmrEzZ0q0Sp5VbcITWphi3OyZKYMn3UA"
   }
 }
 provider "aws" {
