@@ -17,6 +17,7 @@ terraform {
     workspaces {
       name = "learn-terraform-cloud"
     }
+    token = "4BqY7FnjQQ9Ebg.atlasv1.NRUEZtHsmzpFFGvbooGrFKJ0MhNQA2vaHZ0VmrEzZ0q0Sp5VbcITWphi3OyZKYMn3UA"
   }
 }
 provider "aws" {
@@ -46,6 +47,4 @@ resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 }
-credentials "app.terraform.io" {
-  token = "4BqY7FnjQQ9Ebg.atlasv1.NRUEZtHsmzpFFGvbooGrFKJ0MhNQA2vaHZ0VmrEzZ0q0Sp5VbcITWphi3OyZKYMn3UA"
-}
+
