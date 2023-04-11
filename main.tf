@@ -21,9 +21,9 @@ terraform {
 }
 provider "aws" {
    region = "us-east-1"
-  access_key = "ASIA35KEIHUNKNEK6VN3"
-  secret_key = "CLN36Ydx+UEHOc1FBV1FiHJZQ69RQ380pymU505/"
-  token      = "FwoGZXIvYXdzENH//////////wEaDIAp8fufs0wqCZk/lCLJAUzc3CnABnr5/2M/FT3U1K+e73ddXXfYZBGDsu7lF8nVJ3Vcsroi34NNXX2x4yHDnkTGEvlkQQQ9de1Xb70Z09JHLJO7M/BEmWowRVcpVGNj0Ffq18x2hdTanj77aoWPajDMQYnqz3tIdx+NBYzCKswQMVCiFL2/OQhRwiyUVEPt1uObL/AnVWszUnedtgGOqMXXZH8OgQVIwZQzlS0MNis80i9Q6oGMHzV7xMQv+drZTh+3tFCBjLJ6siS4TtxA1xCZZI/Qf5rltCiGidahBjIt8j0l+ig+qc6XDi1tnd+qJtbXHM7vi3bTHNqFnfJ/8ewlw3v/knsWRcewb/lW"
+  access_key = "ASIA35KEIHUNPCU4T47H"
+  secret_key = "l2aSM6QEvCFl547e/34rjFmdnXPhTgOiQkg+XqKS"
+  token      = "FwoGZXIvYXdzENX//////////wEaDAPtaxh3+ttDL8hlxiLJAWlGIiWGjgqpRIKBDEdkks4IQGQ3/Ox/dker2zXii46bOGBHzxtDhu4egfOhHgviD2t/C1LGt1jjUbvqM/W3Zr4WDRAV7H4iNueAvrlJrrI34Dzp2oYI0FX2PDHCnOTILzGKkx9PoRfi1EBBey4YFZrXgCI0pLph1yYOGGTL6Tpn9KyCdUJdntAb19fp5KFWg+cnO/lTVVelNVz0Fqo3ANuAYY/79/hosk11mUaSQdrOt07QHPV7yLibHhcwpcuxCmfdmHCyZUJstSjq+dahBjItLl0KYBP0+z+T/d2tcH5pWLqhEVXKG9v6U3WkMbpAHFnVBGv8Qd5tDlmgHRTp"
 }
 
 data "aws_ami" "ubuntu" {
@@ -44,9 +44,6 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = var.instance_type
+  instance_type = "t2.micro"
 
-  tags = {
-    Name = var.instance_name
-  }
 }
